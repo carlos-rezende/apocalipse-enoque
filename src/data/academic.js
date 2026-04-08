@@ -6,6 +6,6 @@ export const ACADEMIC = {
   disclaimer:
     'Variações entre manuscritos e traduções podem alterar divisão de capítulos e versículos.',
   fullReadingLabel: 'Leitura completa (recurso externo)',
-  /** Wikisource / recurso estável em inglês como ponto de partida para o texto completo */
-  fullReadingUrl: 'https://en.wikisource.org/wiki/The_Book_of_Enoch_(1917)_Charles',
+  /** Book of Enoch (R. H. Charles, 1917) em Sacred Texts */
+  fullReadingUrl: 'https://www.sacred-texts.com/bib/boe/index.htm',
 }
