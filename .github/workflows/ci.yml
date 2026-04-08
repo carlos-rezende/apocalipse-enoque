@@ -1,0 +1,33 @@
+# Builds reproduzíveis: npm ci + mesma versão de Node que .nvmrc
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Install (lockfile exato)
+        run: npm ci
+
+      - name: Verificar Node vs engines
+        run: npm run check:env
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
